@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Nephrologist Care",
+    "text": "Nephrologists are medical professionals who diagnose, treat, and manage acute and chronic kidney problems and diseases. They also treat associated issues like high blood pressure, fluid retention, and electrolyte and mineral imbalances.",
+    "thumb": "https://i.ibb.co/zPmGM0B/service1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Eye Care",
+    "text": "NPrimary eye care is the provision of appropriate, accessible, and affordable care that meets patients' eye care needs in a comprehensive and competent manner. Primary eye care provides the patient with the first contact for eye care as well as a lifetime of continuing care.",
+    "thumb": "https://i.ibb.co/PDg7NHR/service2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Pediatrician Clinic",
+    "text": "A pediatrician is a medical doctor who manages the physical, behavioral, and mental care for children from birth until age 18. A pediatrician is trained to diagnose and treat a broad range of childhood illnesses, from minor health problems to serious diseases.",
+    "thumb": "https://i.ibb.co/TLJXvq7/service3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Prenatal Care",
+    "text": "Prenatal care is the health care you get while you are pregnant. It includes your checkups and prenatal testing. Prenatal care can help keep you and your baby healthy. It lets your health care provider spot health problems early.",
+    "thumb": "https://i.ibb.co/KKwVX5y/service4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Medical Counseling",
+    "text": "Hospital counselors are licensed mental health counselors or licensed social workers who help patients find beneficial things to do after they are released from the hospital. ",
+    "thumb": "https://i.ibb.co/ZH1RdyN/service5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Rehabilitation Center",
+    "text": "A drug rehab center is a place that provides treatment for substance addiction. Treatment may be inpatient or outpatient and short-term or long-term. It generally consists of a personalized blend of therapies for addiction recovery.",
+    "thumb": "https://i.ibb.co/tQZTYhB/service6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Eldery Care",
+    "text": "Senior individuals need assistance to go through daily activities such as preparing and eating meals, bathing, laundry, shopping, and more. However, they also need companionship, support, and special care depending on their health condition.",
+    "thumb": "https://i.ibb.co/xgBM105/service7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Competitive Doctors",
+    "text": "The job of a doctor is universally seen as prestigious. This is because becoming a doctor is highly competitive, with only a select few applicants being admitted to medical schools.",
+    "thumb": "https://i.ibb.co/GkDk73H/service8.jpg"
+  }
+]
