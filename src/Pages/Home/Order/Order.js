@@ -19,7 +19,8 @@ const Order = () => {
     const oprice = opriceRef.current.value;
     const othumb = imgRef.current.value;
 
-    const saveOrder = { uname, umail, oname, oprice, imgRef };
+    const saveOrder = { uname, umail, oname, oprice, othumb };
+    console.log(saveOrder);
 
     fetch("http://localhost:5000/addOrder", {
       method: "POST",
@@ -32,7 +33,6 @@ const Order = () => {
       .then((result) => {
         if (result.insertedId) {
           alert("Your Booking Has Been Confirm");
-          e.target.reset();
         }
       });
 
@@ -46,7 +46,7 @@ const Order = () => {
   }, []);
   return (
     <div>
-      <h1>this is add order</h1>
+      <h1>this is add order{id}</h1>
       <div className="row mx-auto">
         <div className="col-md-4 mx-auto text-center">
           <form onSubmit={handleBooking}>
