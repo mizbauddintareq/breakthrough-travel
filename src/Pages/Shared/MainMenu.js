@@ -7,7 +7,7 @@ const MainMenu = () => {
   const { user, handleLogout } = useAuth();
   return (
     <div>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar variant="dark" expand="lg" style={{ backgroundColor: "#14213d" }}>
         <Container>
           <Navbar.Brand as={Link} to="/">
             Breakthrough Travel
@@ -24,7 +24,13 @@ const MainMenu = () => {
               </Nav.Link>
 
               {user.email ? (
-                <Button onClick={handleLogout}>Logout</Button>
+                <Button
+                  variant="warning"
+                  className="text-white"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Button>
               ) : (
                 <Nav.Link as={Link} to="/login">
                   Login
