@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Button, Container } from "react-bootstrap";
-import useAuth from "../../context/useAuth";
+import { Button } from "react-bootstrap";
 
-const MyOrder = () => {
-  const { user } = useAuth();
+const AllOrders = () => {
   const [orders, setOrders] = useState([]);
   const [isDelete, setIsDelete] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrder/${user?.email}`)
+    fetch("http://localhost:5000/allOrders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, [user.email, isDelete]);
+  }, [isDelete]);
 
   const handleDelete = (id) => {
     fetch(`http://localhost:5000/delOrder/${id}`, {
@@ -30,8 +28,8 @@ const MyOrder = () => {
       });
   };
   return (
-    <Container fluid>
-      <h1>this is my order</h1>
+    <div>
+      <h1>This is all order</h1>
       <div className="row">
         {orders.map((order) => (
           <div key={order._id} className="col-md-4">
@@ -62,8 +60,8 @@ const MyOrder = () => {
           </div>
         ))}
       </div>
-    </Container>
+    </div>
   );
 };
 
-export default MyOrder;
+export default AllOrders;

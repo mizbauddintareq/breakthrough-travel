@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AuthProvider from "./Pages/context/AuthProvider";
 import AddOffer from "./Pages/Home/AddOffer/AddOffer";
+import AllOrders from "./Pages/Home/AllOrders/AllOrders";
 import Home from "./Pages/Home/Home/Home";
 import MyOrder from "./Pages/Home/MyOrders/MyOrder";
 import Order from "./Pages/Home/Order/Order";
@@ -24,15 +25,18 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
+          <PrivateRoute path="/order/:id">
+            <Order></Order>
+          </PrivateRoute>
           <Route path="/addOffer">
             <AddOffer></AddOffer>
           </Route>
           <Route path="/myOrders">
             <MyOrder></MyOrder>
           </Route>
-          <PrivateRoute path="/order/:id">
-            <Order></Order>
-          </PrivateRoute>
+          <Route path="/allOrders">
+            <AllOrders></AllOrders>
+          </Route>
         </Switch>
       </Router>
     </AuthProvider>

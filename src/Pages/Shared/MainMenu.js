@@ -33,10 +33,10 @@ const MainMenu = () => {
               {user.email && (
                 <NavDropdown title={user.displayName} id="basic-nav-dropdown">
                   <NavDropdown.Item as={Link} to="/myOrders">
-                    My Offers
+                    My Order
                   </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">
-                    Manage All Offers
+                  <NavDropdown.Item as={Link} to="/allOrders">
+                    Manage All Order
                   </NavDropdown.Item>
                   <NavDropdown.Item as={Link} to="/addOffer">
                     Add A New Offer
