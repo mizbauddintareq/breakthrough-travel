@@ -27,6 +27,9 @@ function App() {
           <Route path="/addOffer">
             <AddOffer></AddOffer>
           </Route>
+          <Route path="/myOrders">
+            <MyOrder></MyOrder>
+          </Route>
           <PrivateRoute path="/order/:id">
             <Order></Order>
           </PrivateRoute>

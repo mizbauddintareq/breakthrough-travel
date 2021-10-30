@@ -8,18 +8,33 @@ const Order = () => {
   const [info, setInfo] = useState({});
   const nameRef = useRef();
   const emailRef = useRef();
+  const addRef = useRef();
+  const phoneRef = useRef();
   const onameRef = useRef();
   const opriceRef = useRef();
   const imgRef = useRef();
+  const desRef = useRef();
 
   const handleBooking = (e) => {
-    const uname = nameRef.current.value;
-    const umail = emailRef.current.value;
+    const name = nameRef.current.value;
+    const email = emailRef.current.value;
+    const address = addRef.current.value;
+    const phone = phoneRef.current.value;
     const oname = onameRef.current.value;
     const oprice = opriceRef.current.value;
     const othumb = imgRef.current.value;
+    const odes = desRef.current.value;
 
-    const saveOrder = { uname, umail, oname, oprice, othumb };
+    const saveOrder = {
+      name,
+      email,
+      oname,
+      oprice,
+      othumb,
+      odes,
+      address,
+      phone,
+    };
     console.log(saveOrder);
 
     fetch("http://localhost:5000/addOrder", {
@@ -51,6 +66,7 @@ const Order = () => {
         <div className="col-md-4 mx-auto text-center">
           <form onSubmit={handleBooking}>
             <input
+              readOnly
               type="text"
               ref={nameRef}
               className="m-2 p-2 form-control"
@@ -59,12 +75,26 @@ const Order = () => {
 
             <input
               type="text"
+              readOnly
               ref={emailRef}
               className="m-2 p-2 form-control"
               value={user.email}
             />
+            <input
+              type="text"
+              ref={addRef}
+              className="m-2 p-2 form-control"
+              placeholder="Please enter your address"
+            />
+            <input
+              type="text"
+              ref={phoneRef}
+              className="m-2 p-2 form-control"
+              placeholder="Please enter your phone number"
+            />
 
             <input
+              readOnly
               type="text"
               ref={onameRef}
               className="m-2 p-2 form-control"
@@ -72,16 +102,25 @@ const Order = () => {
             />
 
             <input
+              readOnly
               type="text"
               ref={opriceRef}
               className="m-2 p-2 form-control"
               value={info.price}
             />
             <input
+              readOnly
               type="text"
               ref={imgRef}
               className="m-2 p-2 form-control"
               value={info.thumb}
+            />
+            <textarea
+              readOnly
+              type="text"
+              ref={desRef}
+              className="m-2 p-2 form-control"
+              value={info.des}
             />
 
             <input
