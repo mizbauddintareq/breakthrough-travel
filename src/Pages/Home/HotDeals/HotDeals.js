@@ -15,10 +15,10 @@ const HotDeals = () => {
     <div>
       <Container>
         <div className="row d-flex align-items-center">
-          <div className="col-md-6" style={{ color: "#14213d" }}>
+          <div className="col-md-6" style={{ color: "#e63946" }}>
             <h5
               className=" text-uppercase text-muted"
-              style={{ color: "#14213d" }}
+              style={{ color: "#e63946" }}
             >
               Grand Sale Offer
             </h5>
@@ -38,20 +38,23 @@ const HotDeals = () => {
             <Col key={offer._id}>
               <Card
                 className="shadow rounded h-100"
-                style={{ backgroundColor: "#14213d", color: "#e5e5e5" }}
+                style={{ backgroundColor: "#a8dadc", color: "#1d3557" }}
               >
                 <Card.Img variant="top" src={offer.thumb} />
                 <Card.Body>
                   <Card.Title
-                    style={{ color: "#fca311" }}
-                    className="text-uppercase"
+                    style={{ color: "#e63946" }}
+                    className="text-uppercase fw-bold"
                   >
                     {offer.name}
                   </Card.Title>
-                  <h6 style={{ color: "#fca311" }}> ${offer.price} Only</h6>
+                  <h6 style={{ color: "#e63946" }} className="fw-bold">
+                    {" "}
+                    ${offer.price} Only
+                  </h6>
                   <Card.Text>{offer.des.slice(0, 150)}...</Card.Text>
                   <Button
-                    style={{ backgroundColor: "#e5e5e5", color: "#14213d" }}
+                    style={{ backgroundColor: "#1d3557", color: "white" }}
                     as={Link}
                     to={`/order/${offer._id}`}
                   >

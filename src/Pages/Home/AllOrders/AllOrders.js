@@ -37,7 +37,7 @@ const AllOrders = () => {
           <div key={order._id} className="col-md-4">
             <div
               className="card mb-3 h-100"
-              style={{ backgroundColor: "#14213d", color: "#e5e5e5" }}
+              style={{ backgroundColor: "#a8dadc", color: "#1d3557" }}
             >
               <div className="row g-0">
                 <div className="col-md-4">
@@ -49,9 +49,7 @@ const AllOrders = () => {
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
-                    <h5 className="card-title text-white text-uppercase">
-                      {order.oname}
-                    </h5>
+                    <h5 className="card-title text-uppercase">{order.oname}</h5>
                     <p className="card-text text-muted">User: {order.name}</p>
                     <p className="card-text">Address: {order.address}</p>
                     <p className="card-text">Phone: {order.phone}</p>

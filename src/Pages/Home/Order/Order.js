@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Card, Container } from "react-bootstrap";
 import { useParams } from "react-router";
 import useAuth from "../../context/useAuth";
 
@@ -48,6 +49,7 @@ const Order = () => {
       .then((result) => {
         if (result.insertedId) {
           alert("Your Booking Has Been Confirm");
+          setInfo({});
         }
       });
 
@@ -60,10 +62,12 @@ const Order = () => {
       .then((data) => setInfo(data));
   }, []);
   return (
-    <div>
-      <h1>this is add order{id}</h1>
-      <div className="row mx-auto">
-        <div className="col-md-4 mx-auto text-center">
+    <Container fluid>
+      <div
+        className="row py-5 d-flex justify-content-around align-items-center"
+        style={{ backgroundColor: "#14213d" }}
+      >
+        <div className="col-md-4 text-center">
           <form onSubmit={handleBooking}>
             <input
               readOnly
@@ -124,14 +128,23 @@ const Order = () => {
             />
 
             <input
-              className="btn btn-warning"
+              className="btn btn-warning fw-bold "
               type="submit"
               value="Confirm Order"
             />
           </form>
         </div>
+        <div className="col-md-4">
+          <Card className="bg-dark text-white">
+            <Card.Img src={info.thumb} />
+            <Card.ImgOverlay>
+              <Card.Title className="text-uppercase">{info.name}</Card.Title>
+              <Card.Text>{info.des}</Card.Text>
+            </Card.ImgOverlay>
+          </Card>
+        </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

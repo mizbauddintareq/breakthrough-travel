@@ -31,16 +31,16 @@ const MyOrder = () => {
   };
   return (
     <Container fluid>
-      <h1 className=" text-center mt-5" style={{ color: "#14213d" }}>
+      <h1 className=" text-center my-5" style={{ color: "#14213d" }}>
         {" "}
         You Can See All Your Orders Here Those You've Purchased{" "}
       </h1>
-      <div className="row">
+      <div className="row g-4">
         {orders.map((order) => (
           <div key={order._id} className="col-md-4">
             <div
               className="card mb-3 h-100"
-              style={{ backgroundColor: "#14213d", color: "#e5e5e5" }}
+              style={{ backgroundColor: "#a8dadc", color: "#1d3557" }}
             >
               <div className="row g-0">
                 <div className="col-md-4">
@@ -51,10 +51,8 @@ const MyOrder = () => {
                   />
                 </div>
                 <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title text-white text-uppercase">
-                      {order.oname}
-                    </h5>
+                  <div className="card-body" >
+                    <h5 className="card-title text-uppercase">{order.oname}</h5>
                     <p className="card-text text-muted">User: {order.name}</p>
                     <p className="card-text">Address: {order.address}</p>
                     <p className="card-text">Phone: {order.phone}</p>

@@ -8,6 +8,7 @@ import MyOrder from "./Pages/Home/MyOrders/MyOrder";
 import Order from "./Pages/Home/Order/Order";
 import Login from "./Pages/Login/Firebase/Login";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import Footer from "./Pages/Shared/Footer";
 import MainMenu from "./Pages/Shared/MainMenu";
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <AllOrders></AllOrders>
           </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
     </AuthProvider>
   );
