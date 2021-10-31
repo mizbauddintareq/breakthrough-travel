@@ -9,8 +9,8 @@ const MainMenu = () => {
     <div>
       <Navbar variant="dark" expand="lg" style={{ backgroundColor: "#457b9d" }}>
         <Container>
-          <Navbar.Brand as={Link} to="/">
-            Breakthrough Travel
+          <Navbar.Brand as={Link} to="/" style={{ fontFamily: "Rye" }}>
+            Breakthrough Travels
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
