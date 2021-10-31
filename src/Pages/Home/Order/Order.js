@@ -67,6 +67,12 @@ const Order = () => {
   }, []);
   return (
     <Container fluid>
+      <div className="text-center">
+        <h1 className="text-uppercase">details of your order</h1>
+        <p className="text-capitalize">
+          you can add your address and phone number if you want.
+        </p>
+      </div>
       <div
         className="row py-5 d-flex justify-content-around align-items-center"
         style={{ backgroundColor: "#a8dadc" }}
