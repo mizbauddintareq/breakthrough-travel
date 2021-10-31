@@ -1,9 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Card, Container } from "react-bootstrap";
-import { useParams } from "react-router";
+import { useHistory, useLocation, useParams } from "react-router";
+
 import useAuth from "../../context/useAuth";
 
 const Order = () => {
+  const history = useHistory();
+  const location = useLocation();
+  const redirect_Uri = location.state?.from || "/";
   const { id } = useParams();
   const { user } = useAuth();
   const [info, setInfo] = useState({});
@@ -38,18 +42,18 @@ const Order = () => {
     };
     console.log(saveOrder);
 
-    fetch("http://localhost:5000/addOrder", {
+    fetch("https://mysterious-brook-63155.herokuapp.com/addOrder", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(saveOrder),
+      body: JSON.stringify({ ...saveOrder, status: "pending" }),
     })
       .then((res) => res.json())
       .then((result) => {
         if (result.insertedId) {
-          alert("Your Booking Has Been Confirm");
-          setInfo({});
+          alert("Your Booking Has Been Confirmed");
+          history.push(redirect_Uri);
         }
       });
 
@@ -57,7 +61,7 @@ const Order = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/order/${id}`)
+    fetch(`https://mysterious-brook-63155.herokuapp.com/order/${id}`)
       .then((res) => res.json())
       .then((data) => setInfo(data));
   }, []);
@@ -65,7 +69,7 @@ const Order = () => {
     <Container fluid>
       <div
         className="row py-5 d-flex justify-content-around align-items-center"
-        style={{ backgroundColor: "#14213d" }}
+        style={{ backgroundColor: "#a8dadc" }}
       >
         <div className="col-md-4 text-center">
           <form onSubmit={handleBooking}>
@@ -128,7 +132,8 @@ const Order = () => {
             />
 
             <input
-              className="btn btn-warning fw-bold "
+              style={{ backgroundColor: "#1d3557", color: "white" }}
+              className="btn  fw-bold "
               type="submit"
               value="Confirm Order"
             />

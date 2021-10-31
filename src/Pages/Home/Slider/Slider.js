@@ -11,25 +11,32 @@ const Slider = () => {
         <Carousel.Item>
           <img className="d-block w-100" src={slider1} alt="First slide" />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Escorted Tours Of Maldives</h3>
+            <p>
+              Average rating 5 out of 5 from 505 reviews for Escorted Tours of
+              Maldives.
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={slider2} alt="Second slide" />
 
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Escorted Tours Of Greece</h3>
+            <p>
+              For a full list of our escorted tours in Greece with dates and
+              prices, please scroll down.
+            </p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={slider3} alt="Third slide" />
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
+            <h3>Escorted Tours Of Turkey</h3>
             <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              We offer a wide range of escorted tours in Turkey from family
+              tours to walking vacations.
             </p>
           </Carousel.Caption>
         </Carousel.Item>

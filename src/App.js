@@ -6,6 +6,7 @@ import AllOrders from "./Pages/Home/AllOrders/AllOrders";
 import Home from "./Pages/Home/Home/Home";
 import MyOrder from "./Pages/Home/MyOrders/MyOrder";
 import Order from "./Pages/Home/Order/Order";
+import NotFound from "./Pages/Home/NotFound/NotFound";
 import Login from "./Pages/Login/Firebase/Login";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import Footer from "./Pages/Shared/Footer";
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/allOrders">
             <AllOrders></AllOrders>
+          </Route>
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
         </Switch>
         <Footer></Footer>

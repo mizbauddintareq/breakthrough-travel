@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
   faLocationArrow,
-  faMailBulk,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -22,7 +21,7 @@ const Footer = () => {
       style={{
         backgroundColor: "#457b9d",
         color: "#f1faee",
-        marginTop: "100px",
+        marginTop: "80px",
       }}
     >
       <div className="container text-center text-md-start">
@@ -32,14 +31,16 @@ const Footer = () => {
               className="text-uppercase mb-4 fw-bold"
               style={{ color: "#a8dadc" }}
             >
-              second life general hospital
+              Breakthrough travels
             </h5>
             <p>
-              Hospitals may be compared and classified in various ways: by
-              ownership and control, by type of service rendered, by length of
-              stay, by size, or by facilities and administration provided.
-              Examples include the general hospital, the specialized hospital,
-              the short-stay hospital, and the long-term-care facility.
+              The success of any tour depends on logistics. These basic, behind
+              the scenes, practical arrangements are the very necessary nuts and
+              bolts of making a trip a success – from making sure a vehicle
+              arrives at the right location, to the crucial matter of timing.
+              Meticulous planning is all very well, but actually making it
+              happen is key. We depend on our local partners to ensure our
+              escorted trips run smoothly.
             </p>
           </div>
 
@@ -52,27 +53,27 @@ const Footer = () => {
             </h5>
             <p>
               {" "}
-              <p style={{ color: "#f1faee" }}>Nephrologist Care</p>{" "}
+              <p style={{ color: "#f1faee" }}>Maldives Beaches</p>{" "}
             </p>
             <p>
               {" "}
-              <p style={{ color: "#f1faee" }}>Eye Care</p>{" "}
+              <p style={{ color: "#f1faee" }}>Bali, Indonesia</p>{" "}
             </p>
             <p>
               {" "}
-              <p style={{ color: "#f1faee" }}>Pediatrician Clinic</p>{" "}
+              <p style={{ color: "#f1faee" }}>Pattaya Beach</p>{" "}
             </p>
             <p>
               {" "}
-              <p style={{ color: "#f1faee" }}>Prenatal Care</p>{" "}
+              <p style={{ color: "#f1faee" }}>The Eiffel Tower</p>{" "}
             </p>
             <p>
               {" "}
-              <p style={{ color: "#f1faee" }}>Medical Counseling"</p>{" "}
+              <p style={{ color: "#f1faee" }}>Hawaii Islands</p>{" "}
             </p>
             <p>
               {" "}
-              <p style={{ color: "#f1faee" }}>Rehabilitation Center</p>{" "}
+              <p style={{ color: "#f1faee" }}>Great Wall Of China</p>{" "}
             </p>
           </div>
 
@@ -85,7 +86,7 @@ const Footer = () => {
             </h5>
             <p>
               {" "}
-              <p style={{ color: "#f1faee" }}>Sign Up</p>{" "}
+              <p style={{ color: "#f1faee" }}>Agents</p>{" "}
             </p>
             <p>
               {" "}
@@ -101,7 +102,7 @@ const Footer = () => {
             </p>
             <p>
               {" "}
-              <p style={{ color: "#f1faee" }}>Blogs</p>{" "}
+              <p style={{ color: "#f1faee" }}>Booking</p>{" "}
             </p>
             <p>
               {" "}
@@ -129,14 +130,14 @@ const Footer = () => {
             </p>
             <p>
               <FontAwesomeIcon style={{ color: "#f1faee" }} icon={faEnvelope} />{" "}
-              contact@secondlifehospital.com
+              contact@breakthroughtravels.com
             </p>
             <p>
               <FontAwesomeIcon
                 style={{ color: "#f1faee" }}
                 icon={faFirefoxBrowser}
               />{" "}
-              www.second-life-hospital.web.app.com
+              www.breakthrough-travel.web.app
             </p>
           </div>
         </div>

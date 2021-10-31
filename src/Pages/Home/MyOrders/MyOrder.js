@@ -1,34 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import useAuth from "../../context/useAuth";
+import Loading from "../Loading/Loading";
 
 const MyOrder = () => {
   const { user } = useAuth();
   const [orders, setOrders] = useState([]);
   const [isDelete, setIsDelete] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrder/${user?.email}`)
+    fetch(`https://mysterious-brook-63155.herokuapp.com/myOrder/${user?.email}`)
       .then((res) => res.json())
-      .then((data) => setOrders(data));
+      .then((data) => {
+        setOrders(data);
+        setIsLoading(false);
+      });
   }, [user.email, isDelete]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/delOrder/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        const proceed = window.confirm("Are You Want to delete data??");
-        if (proceed) {
+    const proceed = window.confirm("Are You Want to delete data??");
+    if (proceed) {
+      fetch(`https://mysterious-brook-63155.herokuapp.com/delOrder/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((result) => {
           if (result.deletedCount) {
             setIsDelete(!isDelete);
-          } else {
-            setIsDelete(false);
           }
-        }
-      });
+        });
+    }
   };
+  if (isLoading) {
+    return Loading();
+  }
   return (
     <Container fluid>
       <h1 className=" text-center my-5" style={{ color: "#14213d" }}>
@@ -51,12 +57,13 @@ const MyOrder = () => {
                   />
                 </div>
                 <div className="col-md-8">
-                  <div className="card-body" >
+                  <div className="card-body">
                     <h5 className="card-title text-uppercase">{order.oname}</h5>
                     <p className="card-text text-muted">User: {order.name}</p>
                     <p className="card-text">Address: {order.address}</p>
                     <p className="card-text">Phone: {order.phone}</p>
                     <p className="card-text">Price: {order.oprice} USD</p>
+                    <p className="card-text">Status: {order.status}</p>
 
                     <Button
                       onClick={() => handleDelete(order._id)}

@@ -1,32 +1,57 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container } from "react-bootstrap";
+import Loading from "../Loading/Loading";
 
 const AllOrders = () => {
   const [orders, setOrders] = useState([]);
   const [isDelete, setIsDelete] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allOrders")
+    fetch("https://mysterious-brook-63155.herokuapp.com/allOrders")
       .then((res) => res.json())
-      .then((data) => setOrders(data));
-  }, [isDelete]);
+      .then((data) => {
+        setOrders(data);
+        setIsLoading(false);
+      });
+  }, [isDelete, orders]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/delOrder/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        const proceed = window.confirm("Are You Want to delete data??");
-        if (proceed) {
+    const proceed = window.confirm("Are You Want to delete data??");
+    if (proceed) {
+      fetch(`https://mysterious-brook-63155.herokuapp.com/delOrder/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((result) => {
           if (result.deletedCount) {
             setIsDelete(!isDelete);
-          } else {
-            setIsDelete(false);
           }
+        });
+    }
+  };
+
+  const handleStatus = (id) => {
+    const updatestatus = orders.find((update) => update?._id === id);
+    updatestatus.status = "approved";
+    const uri = `https://mysterious-brook-63155.herokuapp.com/status/${id}`;
+    fetch(uri, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatestatus),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          alert("updated successfully");
         }
       });
   };
+  if (isLoading) {
+    return Loading();
+  }
   return (
     <Container fluid>
       <h1 className="text-center mt-5" style={{ color: "#14213d" }}>
@@ -54,13 +79,22 @@ const AllOrders = () => {
                     <p className="card-text">Address: {order.address}</p>
                     <p className="card-text">Phone: {order.phone}</p>
                     <p className="card-text">Price: {order.oprice} USD</p>
+                    <p className="card-text">Status: {order.status}</p>
 
-                    <Button
-                      onClick={() => handleDelete(order._id)}
-                      style={{ backgroundColor: "#dc2f02" }}
-                    >
-                      DELETE
-                    </Button>
+                    <div className="d-flex justify-content-between">
+                      <Button
+                        onClick={() => handleDelete(order._id)}
+                        style={{ backgroundColor: "#dc2f02" }}
+                      >
+                        DELETE
+                      </Button>
+                      <Button
+                        style={{ backgroundColor: "#1d3557", color: "white" }}
+                        onClick={() => handleStatus(order._id)}
+                      >
+                        {order.status}
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>

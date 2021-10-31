@@ -1,28 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
 import offer from "../../images/offer.png";
+import Loading from "../Loading/Loading";
 
 const HotDeals = () => {
   const [offers, setOffers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/offers")
+    fetch("https://mysterious-brook-63155.herokuapp.com/offers")
       .then((res) => res.json())
-      .then((data) => setOffers(data));
+      .then((data) => {
+        setOffers(data);
+        setIsLoading(false);
+      });
   }, []);
+  if (isLoading) {
+    return Loading();
+  }
   return (
     <div>
       <Container>
         <div className="row d-flex align-items-center">
           <div className="col-md-6" style={{ color: "#e63946" }}>
             <h5
-              className=" text-uppercase text-muted"
+              className=" text-uppercase text-muted fw-bold"
               style={{ color: "#e63946" }}
             >
               Grand Sale Offer
             </h5>
-            <h1 className="text-uppercase" style={{ fontSize: "50px" }}>
+            <h1 className="text-uppercase fw-bold" style={{ fontSize: "50px" }}>
               Summer Time: <br /> Grab this deal right now, tomorrow might be
               gone!
             </h1>
